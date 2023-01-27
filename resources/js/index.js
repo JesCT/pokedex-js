@@ -1,6 +1,6 @@
 let num = parseInt(Math.random() * 168)
 let res = parseInt(num * 6)
-let urlI = 'https://aeasa.com.mx/wp-content/uploads/2020/02/SIN-IMAGEN.jpg'
+let urlI = '/resources/imgs/sin-imagen.jpg'
 
 let names = []
 let urls = []
@@ -16,7 +16,7 @@ async function getNames() {
     }
 }
 
-async function getImagers() {
+async function getImages() {
     for (let i = 0; i < 6; i++) {
         let response = await fetch(urls[i])
         let data = await response.json()
@@ -26,7 +26,7 @@ async function getImagers() {
 
 async function main() {
     await getNames()
-    await getImagers()
+    await getImages()
 
     document.getElementById('n1').innerHTML = names[0]
     document.getElementById('n2').innerHTML = names[1]
