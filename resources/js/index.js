@@ -28,19 +28,10 @@ async function main() {
     await getNames()
     await getImages()
 
-    document.getElementById('n1').innerHTML = names[0]
-    document.getElementById('n2').innerHTML = names[1]
-    document.getElementById('n3').innerHTML = names[2]
-    document.getElementById('n4').innerHTML = names[3]
-    document.getElementById('n5').innerHTML = names[4]
-    document.getElementById('n6').innerHTML = names[5]
-
-    document.getElementById('img1').src = (images[0] == null ? urlI : images[0])
-    document.getElementById('img2').src = (images[1] == null ? urlI : images[1])
-    document.getElementById('img3').src = (images[2] == null ? urlI : images[2])
-    document.getElementById('img4').src = (images[3] == null ? urlI : images[3])
-    document.getElementById('img5').src = (images[4] == null ? urlI : images[4])
-    document.getElementById('img6').src = (images[5] == null ? urlI : images[5])
+    for (let i = 0; i < names.length; i++) {
+        document.getElementById(`n${i}`).innerHTML = names[i]
+        document.getElementById(`img${i}`).src = (images[i] == null ? urlI : images[i])
+    }
 }
 
 main()
